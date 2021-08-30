@@ -82,9 +82,8 @@ export default function App($app) {
       try {
         const nextState = { ...this.state }
         nextState.depth.pop()
-
         const prevNodeId = nextState.depth.length === 0 ? null : nextState.depth[nextState.depth.length - 1].id
-     
+
         if (prevNodeId === null) {
           const rootNodes = await request()
           this.setState({
